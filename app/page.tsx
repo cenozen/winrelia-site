@@ -1,7 +1,9 @@
 import { ArrowRight, Boxes, ChartNoAxesCombined, CheckCircle2, ClipboardCheck, PackageSearch, ShieldCheck, Sparkles, Warehouse, Wrench } from "lucide-react";
+import { buyerFaqs } from "./service-data";
 
 const services = [
   {
+    slug: "factory-searching-checking",
     icon: PackageSearch,
     title: "Factory Searching & Checking",
     text: "We identify suitable factories, compare real production capabilities and check the working environment before you commit to an order.",
@@ -14,6 +16,7 @@ const services = [
     ],
   },
   {
+    slug: "product-qc",
     icon: ClipboardCheck,
     title: "Product QC",
     text: "We turn your specifications and known defect risks into practical checks, dimensional measurements and clear batch-level evidence.",
@@ -26,6 +29,7 @@ const services = [
     ],
   },
   {
+    slug: "private-label-launch",
     icon: Sparkles,
     title: "Private Label Launch",
     text: "Launch or test a SKU with branded packaging, labels, inserts and mixed-factory components—even when the individual factories cannot support your quantity.",
@@ -38,6 +42,7 @@ const services = [
     ],
   },
   {
+    slug: "carton-optimization",
     icon: Boxes,
     title: "Carton Optimization",
     text: "We consolidate, resize and repack cartons around product protection, shipping efficiency and your marketplace or fulfilment requirements.",
@@ -50,6 +55,7 @@ const services = [
     ],
   },
   {
+    slug: "palletizing-container-loading",
     icon: Wrench,
     title: "Palletizing & Container Loading",
     text: "We coordinate loading across multiple suppliers, palletize when required and use container space carefully so one shipment leaves China under one plan.",
@@ -62,6 +68,7 @@ const services = [
     ],
   },
   {
+    slug: "warehouse-storage",
     icon: Warehouse,
     title: "Warehouse Storage",
     text: "Receive goods from different factories, hold neutral inventory and release, label, kit or split it when your market and replenishment needs become clear.",
@@ -107,14 +114,19 @@ export default function Home() {
       <div className="proof"><div><strong>15+</strong><span>Years in international trade</span></div><div><strong>3,000 m²</strong><span>China warehouse capacity</span></div><div><strong>600+</strong><span>Customers served worldwide</span></div><div><strong>1,000+</strong><span>Cooperative factories</span></div></div>
     </section>
     <section className="section services" id="services">
-      <div className="section-heading"><div><p className="kicker">Real work from our China-side team</p><h2>Six capabilities.<br/><em>One accountable team.</em></h2></div><p>From the first factory check to final loading, Winrelia keeps your products, packaging and inventory moving under one coordinated plan. The photos below show our work on the ground.</p></div>
-      <div className="service-grid">{services.map(({icon:Icon,title,text,result,subject,images},i)=><article key={title}>
+      <div className="section-heading"><div><p className="kicker">China sourcing, QC &amp; e-commerce fulfilment support</p><h2>Six capabilities.<br/><em>One accountable team.</em></h2></div><p>From factory searching and product QC to private label, carton optimization, consolidation and warehouse storage, Winrelia keeps your inventory moving under one coordinated China-side plan.</p></div>
+      <div className="service-grid">{services.map(({icon:Icon,title,text,result,subject,images,slug},i)=><article key={title}>
         <div className="service-gallery">
           {images.map(([src,alt],imageIndex)=><img key={src} className={imageIndex===0?"service-image service-image-main":"service-image"} src={src} alt={alt} width="1000" height="1000" loading="lazy" />)}
           <span className="service-number">0{i+1}</span>
         </div>
-        <div className="service-content"><span className="service-icon"><Icon/></span><h3>{title}</h3><p>{text}</p><strong className="service-result"><CheckCircle2 size={15}/>{result}</strong><a href={`mailto:winrelia@hotmail.com?subject=${encodeURIComponent(subject)}`}>Discuss this service <ArrowRight size={15}/></a></div>
+        <div className="service-content"><span className="service-icon"><Icon/></span><h3>{title}</h3><p>{text}</p><strong className="service-result"><CheckCircle2 size={15}/>{result}</strong><a href={`/services/${slug}`}>Read the service guide <ArrowRight size={15}/></a></div>
       </article>)}</div>
+    </section>
+    <section className="section faq" id="faq">
+      <div className="section-heading"><div><p className="kicker">Clear answers for online sellers</p><h2>Before you contact<br/><em>your China-side partner.</em></h2></div><p>These are the questions we hear most often from e-commerce sellers who need better control over sourcing, packaging, quality and multi-supplier shipments.</p></div>
+      <div className="faq-list">{buyerFaqs.map(({question,answer})=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>
+      <a className="faq-more" href="mailto:winrelia@hotmail.com?subject=Winrelia%20e-commerce%20supply%20chain%20question">Ask about your SKU <ArrowRight size={15}/></a>
     </section>
     <section className="audit" id="audit">
       <div className="audit-copy"><p className="kicker light">A practical first step</p><h2>Start with<br/><em>one existing SKU.</em></h2><p>Before changing suppliers or committing to a large order, let us check where packaging, fulfilment, sourcing structure or customization may be costing you margin.</p><a className="button white" href="mailto:winrelia@hotmail.com?subject=Free%20SKU%20Audit&body=Product%20link%3A%0ACurrent%20pack%20size%20and%20weight%3A%0ATarget%20market%3A%0ASales%20channel%3A%0ACurrent%20challenge%3A">Request your free audit <ArrowRight size={18}/></a></div>
@@ -127,6 +139,11 @@ export default function Home() {
     <section className="section process" id="process"><div className="section-heading"><div><p className="kicker">A measurable working process</p><h2>Review first.<br/><em>Execute with evidence.</em></h2></div><p>Start with a single SKU, shipment or urgent problem. Expand the relationship only after you see how our China-side team works.</p></div><div className="process-grid">{process.map(([n,t,b])=><article key={n}><span>{n}</span><div className="process-dot"/><h3>{t}</h3><p>{b}</p></article>)}</div></section>
     <section className="section about" id="about"><div className="about-panel"><p className="kicker light">Based in Shenzhen, working globally</p><h2>Your e-commerce<br/><em>operations team in China.</em></h2><p>WINRELIA TECHNOLOGY CO., LTD brings sourcing, customization, quality control, warehousing, packaging, consolidation and shipment preparation under one accountable team, with operational support across Shenzhen, Dongguan and Guangzhou.</p><ul><li><CheckCircle2/>SKU-level packing, carton and batch records</li><li><CheckCircle2/>Small-batch branding and multi-factory kitting</li><li><CheckCircle2/>Quality, documentation and shipment preparation</li></ul></div><div className="promise"><img src="/winrelia-logo.png" alt=""/><blockquote>Helping you win your markets.</blockquote><p>From China-side complexity to inventory ready for the UK, Europe, USA, Australia and beyond.</p></div></section>
     <section className="closing" id="contact"><span className="closing-mark">W</span><p className="kicker light">One SKU is enough to begin</p><h2>Find the hidden cost<br/><em>before your next order.</em></h2><p>Send Owen a product link, current package size and target market. We will reply with a practical review of where cost or risk may be reduced.</p><div className="actions"><a className="button white" href="https://wa.me/8613430302527?text=Hi%20Owen%2C%20I%27d%20like%20a%20free%20SKU%20audit.%20Here%20is%20my%20product%20link%3A" target="_blank" rel="noreferrer">WhatsApp Owen · +447502101681 <ArrowRight size={18}/></a><a className="email-link" href="mailto:winrelia@hotmail.com?subject=Free%20SKU%20audit">winrelia@hotmail.com</a></div></section>
-    <footer><img src="/winrelia-logo.png" alt="Winrelia"/><p>WINRELIA TECHNOLOGY CO., LTD · Shenzhen, China · WhatsApp +86 134 3030 2527</p><p>© 2026 Winrelia</p></footer>
+    <footer><img src="/winrelia-logo.png" alt="Winrelia" width="165" height="55"/><p>WINRELIA TECHNOLOGY CO., LTD · Shenzhen, China · WhatsApp +86 134 3030 2527</p><p>© 2026 Winrelia</p></footer>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: buyerFaqs.map(({question, answer}) => ({"@type": "Question", name: question, acceptedAnswer: {"@type": "Answer", text: answer}})),
+    }) }} />
   </main>;
 }
