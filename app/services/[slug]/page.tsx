@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronRight, Linkedin } from "lucide-react";
 import { servicePages } from "@/app/service-data";
 
 export const dynamic = "force-static";
@@ -74,7 +74,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <section className="detail-outcomes"><div><p className="kicker light">What you can expect</p><h2>Less China-side friction.<br/><em>More control over the result.</em></h2></div><ul>{service.outcomes.map((item) => <li key={item}><CheckCircle2 size={18}/><span>{item}</span></li>)}</ul></section>
     <section className="detail-faq"><p className="kicker">Buyer questions</p><h2>Questions online sellers ask before starting.</h2><div className="faq-list">{service.faq.map(({ question, answer }) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
     <section className="detail-cta" id="contact"><p className="kicker light">Start with one SKU</p><h2>Send the product, pack or shipment problem.</h2><p>We will review the China-side opportunity and reply with a practical next step.</p><div className="actions"><a className="button white" href="https://wa.me/8613430302527?text=Hi%20Owen%2C%20I%27d%20like%20to%20discuss%20this%20service%3A%20">WhatsApp Owen <ArrowRight size={18}/></a><a className="email-link" href="mailto:winrelia@hotmail.com?subject=Winrelia%20service%20review">winrelia@hotmail.com</a></div></section>
-    <footer><img src="/winrelia-logo.png" alt="Winrelia" width="165" height="55"/><p>WINRELIA TECHNOLOGY CO., LTD · Shenzhen, China · WhatsApp +86 134 3030 2527</p><p>© 2026 Winrelia</p></footer>
+    <footer><img src="/winrelia-logo.png" alt="Winrelia" width="165" height="55"/><p>WINRELIA TECHNOLOGY CO., LTD · Shenzhen, China · WhatsApp +86 134 3030 2527</p><a className="footer-social" href="https://www.linkedin.com/in/owen-l-066393135/" target="_blank" rel="me noreferrer"><Linkedin size={16}/>LinkedIn · Owen Liang</a><p>© 2026 Winrelia</p></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
   </main>;
 }
