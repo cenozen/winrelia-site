@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { FloatingContact } from "./floating-contact";
 import "./globals.css";
 import "./strategy.css";
 
@@ -85,6 +86,7 @@ export default function RootLayout({
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <FloatingContact />
         <Analytics />
         <SpeedInsights />
       </body>

@@ -1,4 +1,4 @@
-import { ArrowRight, Boxes, ChartNoAxesCombined, CheckCircle2, ClipboardCheck, Linkedin, PackageSearch, ShieldCheck, Sparkles, Warehouse, Wrench } from "lucide-react";
+import { ArrowRight, Boxes, ChartNoAxesCombined, CheckCircle2, ClipboardCheck, Linkedin, Mail, MessageCircle, PackageSearch, ShieldCheck, Sparkles, Warehouse, Wrench } from "lucide-react";
 import { buyerFaqs } from "./service-data";
 
 const services = [
@@ -102,14 +102,12 @@ export default function Home() {
         <p className="eyebrow"><span>Shenzhen · China</span>Built for online sellers and growing brands</p>
         <h1>More than sourcing.<br/><em>Better unit economics.</em></h1>
         <p className="lede">WINRELIA turns goods from Chinese factories into retail-ready, fee-optimized inventory—helping e-commerce sellers protect margin, reduce stock risk and simplify China-side operations.</p>
-        <div className="actions"><a className="button primary" href="https://wa.me/8613430302527?text=Hi%20Owen%2C%20I%27d%20like%20a%20free%20SKU%20packaging%20and%20cost%20audit." target="_blank" rel="noreferrer">Get a free SKU audit <ArrowRight size={18}/></a><a className="text-link" href="#services">Explore profit-focused solutions</a></div>
+        <div className="actions hero-actions"><a className="button whatsapp-primary" href="https://wa.me/8613430302527?text=Hi%20Owen%2C%20I%27d%20like%20a%20free%20SKU%20packaging%20and%20cost%20audit." target="_blank" rel="noreferrer"><MessageCircle size={19}/> WhatsApp Owen — Free SKU Audit</a><a className="button email-primary" href="mailto:winrelia@hotmail.com?subject=Free%20SKU%20audit"><Mail size={18}/> Email Your SKU</a></div>
         <div className="trust-line"><ShieldCheck size={18}/><span>15+ years of international trade experience · one accountable China-side team</span></div>
       </div>
       <div className="hero-visual">
         <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
         <div className="visual-card main-card"><span className="card-icon"><ChartNoAxesCombined/></span><p>PROFIT-READY SOURCING</p><strong>Source → Optimize → Prepare → Ship</strong><small>Every decision connects product, packaging, inventory and fulfilment cost.</small></div>
-        <div className="visual-card status-card"><CheckCircle2/><span><strong>Retail-ready</strong><small>Checked, packed & documented</small></span></div>
-        <div className="visual-card network-card"><Warehouse/><span><strong>3,000 m²</strong><small>China warehouse capacity</small></span></div>
       </div>
       <div className="proof"><div><strong>15+</strong><span>Years in international trade</span></div><div><strong>3,000 m²</strong><span>China warehouse capacity</span></div><div><strong>600+</strong><span>Customers served worldwide</span></div><div><strong>1,000+</strong><span>Cooperative factories</span></div></div>
     </section>
