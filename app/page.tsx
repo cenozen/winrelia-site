@@ -124,6 +124,7 @@ export default function Home() {
     <section className="section faq" id="faq">
       <div className="section-heading"><div><p className="kicker">Clear answers for online sellers</p><h2>Before you contact<br/><em>your China-side partner.</em></h2></div><p>These are the questions we hear most often from e-commerce sellers who need better control over sourcing, packaging, quality and multi-supplier shipments.</p></div>
       <div className="faq-list">{buyerFaqs.map(({question,answer})=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>
+      <p><a className="faq-more" href="/china-warehouse-consolidation">Explore China warehouse consolidation for multiple suppliers <ArrowRight size={15}/></a></p>
       <a className="faq-more" href="mailto:winrelia@hotmail.com?subject=Winrelia%20e-commerce%20supply%20chain%20question">Ask about your SKU <ArrowRight size={15}/></a>
     </section>
     <section className="audit" id="audit">
