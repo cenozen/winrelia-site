@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    { url: "https://www.winrelia.com/china-warehouse-consolidation", lastModified: new Date("2026-11-19"), changeFrequency: "monthly", priority: 0.9 },
     ...servicePages.map((service) => ({
       url: `https://www.winrelia.com/services/${service.slug}`,
       lastModified: new Date("2026-09-12"),
